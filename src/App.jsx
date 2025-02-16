@@ -392,7 +392,7 @@ const App = () => {
                   className="btn btn-color-2 project-btn"
                   onClick={() =>
                     window.open(
-                      "https://github.com/AkhrorjonSadullayev/camper-origin-frontend-"
+                      "https://pet-project-frontend-lovat.vercel.app"
                     )
                   }
                 >
