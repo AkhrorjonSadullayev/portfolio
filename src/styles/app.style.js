@@ -8,25 +8,7 @@ export const NavContainer = styled.div`
   align-items: center;
   height: 17vh;
   padding: 0 5rem;
-  .button {
-  border: 2px solid rgb(53, 53, 53); /* Border color */
-  background-color: transparent; /* Transparent background */
-  color: rgb(53, 53, 53); /* Text color */
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: all 0.3s ease; /* Smooth transition for color change */
-  border-radius: 2rem;
-}
 
-.button:hover {
-  background-color: rgb(53, 53, 53); /* Hover effect */
-  color: white; /* Change text color on hover */
-}
-
-.button.active {
-  background-color: rgb(53, 53, 53); /* Active background color */
-  color: white; /* Active text color */
-}
   .name {
     font-size: 2rem;
   }
@@ -53,10 +35,28 @@ export const NavContainer = styled.div`
     text-underline-offset: 0.5rem;
     text-decoration-color: rgb(181, 181, 181);
   }
-
   @media screen and (max-width: 1024px) {
     display: none;
   }
+.button {
+  border: 2px solid rgb(53, 53, 53); /* Border color */
+  background-color: transparent; /* Transparent background */
+  color: rgb(53, 53, 53); /* Text color */
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for color change */
+  border-radius: 2rem;
+}
+
+.button:hover {
+  background-color: rgb(53, 53, 53); /* Hover effect */
+  color: white; /* Change text color on hover */
+}
+
+.button.active {
+  background-color: rgb(53, 53, 53); /* Active background color */
+  color: white; /* Active text color */
+}
 `;
 
 export const HamburgerContainer = styled.div`
@@ -142,7 +142,25 @@ export const HamburgerContainer = styled.div`
   .hamburger-icon.open span:last-child {
     transform: rotate(-45deg) translate(5px, -6px);
   }
+  .button {
+  border: 2px solid rgb(53, 53, 53); /* Border color */
+  background-color: transparent; /* Transparent background */
+  color: rgb(53, 53, 53); /* Text color */
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for color change */
+  border-radius: 2rem;
+}
 
+.button:hover {
+  background-color: rgb(53, 53, 53); /* Hover effect */
+  color: white; /* Change text color on hover */
+}
+
+.button.active {
+  background-color: rgb(53, 53, 53); /* Active background color */
+  color: white; /* Active text color */
+}
   @media screen and (max-width: 1024px) {
     display: flex;
   }

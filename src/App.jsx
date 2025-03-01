@@ -41,32 +41,24 @@ const App = () => {
     <AppContainer>
     <div>
       <NavContainer>
-      <div className="name">{t('name')}</div>
-      <div>
+        <div style={{ display: 'flex', flexDirection: 'column',alignItems: 'center'}}>
+        <div className="name">{t('name')}</div>
+      <div className="button-container">
       <button
-        className="button"
-        style={{
-          backgroundColor: activeLang === 'ko' ? 'rgb(53, 53, 53)' : 'transparent',
-          color: activeLang === 'ko' ? 'white' : 'rgb(53, 53, 53)',
-          borderColor: 'rgb(53, 53, 53)',
-        }}
+        className={`button ${activeLang === 'ko' ? 'active' : ''}`}
         onClick={() => handleLanguageChange('ko')}
       >
         한국어
       </button>
       <button
-        className="button"
-        style={{
-          backgroundColor: activeLang === 'en' ? 'rgb(53, 53, 53)' : 'transparent',
-          color: activeLang === 'en' ? 'white' : 'rgb(53, 53, 53)',
-          borderColor: 'rgb(53, 53, 53)',
-        }}
+        className={`button ${activeLang === 'en' ? 'active' : ''}`}
         onClick={() => handleLanguageChange('en')}
       >
         English
       </button>
-      </div>
-      <div>
+    </div>
+        </div>
+      <div >
         <ul className="links">
           <li>
             <a href="#about">{t('about')}</a>
@@ -85,7 +77,23 @@ const App = () => {
       </NavContainer>
 
       <HamburgerContainer>
-        <div className="name">Akhrorjon Sadullaev</div>
+      <div style={{ display: 'flex', flexDirection: 'column',alignItems: 'center'}}>
+        <div className="name">{t('name')}</div>
+      <div className="button-container">
+      <button
+        className={`button ${activeLang === 'ko' ? 'active' : ''}`}
+        onClick={() => handleLanguageChange('ko')}
+      >
+        한국어
+      </button>
+      <button
+        className={`button ${activeLang === 'en' ? 'active' : ''}`}
+        onClick={() => handleLanguageChange('en')}
+      >
+        English
+      </button>
+    </div>
+        </div>
         <div className="hamburger-menu">
           <div className="hamburger-icon" onClick={toggleMenu}>
             <span></span>
