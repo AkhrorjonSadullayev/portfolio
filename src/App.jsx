@@ -436,7 +436,7 @@ const App = () => {
                   className="btn btn-color-2 project-btn"
                   onClick={() =>
                     window.open(
-                      "https://pet-project-admin.vercel.app/chart"
+                      "https://pet-project-admin.vercel.app"
                     )
                   }
                 >
