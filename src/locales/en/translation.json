@@ -1,0 +1,43 @@
+{
+  "name": "Akhrorjon Sadullaev",
+  "about": "About",
+  "experience": "Experience",
+  "projects": "Projects",
+  "contact": "Contact",
+  "hello": "Hello, I'm",
+  "fullStackDeveloper": "Full Stack Web Developer",
+  "gitHub": "GitHub",
+  "getToKnowMore": "Get To Know More",
+  "aboutMe": "About Me",
+  "education": "Education",
+  "experienceText": "6 months of experience in the Bootcamp\nFull Stack Web Development",
+  "educationText": "3rd year bachelor degree student\nat Joongbu University",
+  "fullStackDeveloperDescription": "Full-stack Developer – Passionate and Fast Learner I completed a 6-month bootcamp, where I learned HTML, CSS, JavaScript, React.js, TypeScript, Node.js, and Express.js. I enjoy learning new technologies and applying them to real projects. During this time, I successfully developed two real-world projects, which provided me with hands-on experience and solid skills.",
+  "exploreMy": "Explore My",
+  "frontendDevelopment": "Frontend Development",
+  "backendDevelopment": "Backend Development",
+  "browseMyRecent": "Browse My Recent",
+
+  "camperCarTitle": "Camper Car",
+  "camperCarDescription": "This is my first project. I used React.js for the frontend, MUI for components and icons, Styled-components for styling, React Router for navigation, React Modal for pop-ups, and React Slick with Responsive Carousel for carousels. EmailJS was added for sending emails. The project is fully responsive.",
+  "liveDemo": "Live Demo",
+
+  "zooMarketTitle": "Zoo Market",
+  "zooMarketWarning": "Please use a laptop to open this!",
+  "zooMarketDescription": "Zoo Market is a full-stack web application for selling people's pets and pet-related products. The frontend is built with TypeScript, Styled-components, MUI, React Router, React Modal, and React Slick, and it connects to the backend using Axios. The backend is powered by Node.js, Express.js, and MongoDB, with Nodemailer integrated for automated email sending.",
+
+  "adminDashboardTitle": "Zoo Market \n(Admin Dashboard)",
+  "adminDashboardWarning": "Please use a laptop to open this!",
+  "email": "Email:",
+  "password": "Password:",
+  "adminDashboardDescription": "The Admin Dashboard is used to manage the Zoo Market platform. It is built with TypeScript, Styled-components, MUI Material, and MUI Joy. Chart.js and react-chartjs-2 display information about products and users. Axios handles data requests, react-router-dom manages navigation, and react-toastify shows notifications. JWT authentication and jspdf help with security and creating reports.",
+
+  "koreaAutoAppTitle": "Korea Auto app",
+  "koreaAutoAppDescription": "The Korea Auto app is a specialized tool designed to simplify the process of buying and selling cars in South Korea. It stands out for its convenience, useful features, and multilingual support. With Korea Auto, users can easily, quickly, and conveniently list their cars for free—no fees required for posting! The app’s efficient interface, simple navigation, and availability in six languages make it accessible and effective for users from around the world. Additionally, it serves as a reliable partner in South Korea’s car market, offering users the best opportunities.",
+  "playMarket": "Play Market",
+  "appStore": "App Store",
+
+    "getInTouch": "Get In Touch",
+    "contactMe": "Contact Me"
+  
+}

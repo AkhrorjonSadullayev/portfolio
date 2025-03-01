@@ -10,8 +10,6 @@ import {
   ProjectsContainer,
 } from "./styles/app.style";
 import profileImg from "./assets/image1.jpg";
-import instagram from "./assets/instagram-53.png";
-import facebook from "./assets/facebook.png";
 import aboutPic from "./assets/aboutPic.jpg";
 import experienseIcon from "./assets/experiense.svg";
 import educationIcon from "./assets/education.svg";
@@ -20,9 +18,18 @@ import checkmark from "./assets/check.svg";
 import project1 from "./assets/camper.webp";
 import project2 from "./assets/zoo-market.jpg";
 import project3 from "./assets/admin.jpg";
+import project4 from "./assets/korea-auto-app.png";
 import contact from "./assets/contact.svg";
 import email from "./assets/email.svg";
+import { useTranslation } from 'react-i18next';
+import { useState } from "react";
 const App = () => {
+  const { t, i18n } = useTranslation();
+  const [activeLang, setActiveLang] = useState('en'); 
+  const handleLanguageChange = (lang) => {
+    i18n.changeLanguage(lang);
+    setActiveLang(lang); // Set the active language
+  };
   function toggleMenu() {
     const menu = document.querySelector(".menu-links");
     const icon = document.querySelector(".hamburger-icon");
@@ -32,24 +39,49 @@ const App = () => {
 
   return (
     <AppContainer>
+    <div>
       <NavContainer>
-        <div className="name">Akhrorjon Sadullaev</div>
-        <div>
-          <ul className="links">
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#experience">Experience</a>
-            </li>
-            <li>
-              <a href="#projects">Projects</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
+      <div className="name">{t('name')}</div>
+      <div>
+      <button
+        className="button"
+        style={{
+          backgroundColor: activeLang === 'ko' ? 'rgb(53, 53, 53)' : 'transparent',
+          color: activeLang === 'ko' ? 'white' : 'rgb(53, 53, 53)',
+          borderColor: 'rgb(53, 53, 53)',
+        }}
+        onClick={() => handleLanguageChange('ko')}
+      >
+        한국어
+      </button>
+      <button
+        className="button"
+        style={{
+          backgroundColor: activeLang === 'en' ? 'rgb(53, 53, 53)' : 'transparent',
+          color: activeLang === 'en' ? 'white' : 'rgb(53, 53, 53)',
+          borderColor: 'rgb(53, 53, 53)',
+        }}
+        onClick={() => handleLanguageChange('en')}
+      >
+        English
+      </button>
+      </div>
+      <div>
+        <ul className="links">
+          <li>
+            <a href="#about">{t('about')}</a>
+          </li>
+          <li>
+            <a href="#experience">{t('experience')}</a>
+          </li>
+          <li>
+            <a href="#projects">{t('projects')}</a>
+          </li>
+          <li>
+            <a href="#contact">{t('contact')}</a>
+          </li>
+        </ul>
+      </div>
       </NavContainer>
 
       <HamburgerContainer>
@@ -63,22 +95,22 @@ const App = () => {
           <div className="menu-links">
             <li>
               <a href="#about" onClick={toggleMenu}>
-                About
+              {t('about')}
               </a>
             </li>
             <li>
               <a href="#experience" onClick={toggleMenu}>
-                Experience
+              {t('experience')}
               </a>
             </li>
             <li>
               <a href="#projects" onClick={toggleMenu}>
-                Projects
+              {t('projects')}
               </a>
             </li>
             <li>
               <a href="#contact" onClick={toggleMenu}>
-                Contact
+              {t('contact')}
               </a>
             </li>
           </div>
@@ -86,114 +118,84 @@ const App = () => {
       </HamburgerContainer>
 
       <ProfileContainer>
-        <div className="profile-con">
-          <img src={profileImg} alt="Profile-Img" />
+      <div className="profile-con">
+        <img src={profileImg} alt="Profile-Img" />
+      </div>
+      <div className="profile-info">
+        <p className="profile-info-p1">{t('hello')}</p>
+        <h1 className="title">{t('name')}</h1>
+        <p className="profile-info-p2">{t('fullStackDeveloper')}</p>
+        <div className="btn-container">
+          <button
+            className="btn btn-color-2"
+            onClick={() =>
+              window.open("https://github.com/AkhrorjonSadullayev")
+            }
+          >
+            {t('gitHub')}
+          </button>
+          <button
+            className="btn btn-color-1"
+            onClick={() => (location.href = "./#contact")}
+          >
+            {t('contact')}
+          </button>
         </div>
-        <div className="profile-info">
-          <p className="profile-info-p1">Hello, I'm</p>
-          <h1 className="title">Akhrorjon Sadullaev</h1>
-          <p className="profile-info-p2">Full Stack Web Developer</p>
-          <div className="btn-container">
-            <button
-              className="btn btn-color-2"
-              onClick={() =>
-                window.open("https://github.com/AkhrorjonSadullayev")
-              }
-            >
-              GitHub
-            </button>
-            <button
-              className="btn btn-color-1"
-              onClick={() => (location.href = "./#contact")}
-            >
-              Contact
-            </button>
-          </div>
-          <div className="social-icons">
-            <img
-              onClick={() =>
-                window.open("https://www.instagram.com/akhrorjon_sadullaev/")
-              }
-              className="icon"
-              src={instagram}
-              alt="instagram profile"
-            />
-            <img
-              onClick={() =>
-                window.open("https://www.instagram.com/akhrorjon_sadullaev/")
-              }
-              className="icon"
-              src={facebook}
-              alt="instagram profile"
-            />
-          </div>
-        </div>
-      </ProfileContainer>
+      </div>
+    </ProfileContainer>
 
-      <AboutContainer id="about">
-        <div className="about-title">
-          <p className="about-p1">Get To Know More</p>
-          <h1 className="title">About Me</h1>
+    <AboutContainer id="about">
+      <div className="about-title">
+        <p className="about-p1">{t('getToKnowMore')}</p>
+        <h1 className="title">{t('aboutMe')}</h1>
+      </div>
+      <div className="section-container">
+        <div className="section-pic-container">
+          <img className="about-pic" src={aboutPic} alt="Profile Picture" />
         </div>
-        <div className="section-container">
-          <div className="section-pic-container">
-            <img className="about-pic" src={aboutPic} alt="Profile Picture" />
-          </div>
-          <div className="about-details-container">
-            <div className="about-containers">
-              <div className="details-container">
-                <img
-                  className="icon"
-                  src={experienseIcon}
-                  alt="Experience Icon"
-                />
-                <h3>Experience</h3>
-                <p>
-                  6 months of experience in the Bootcamp <br />
-                  Full Stack Web Development
-                </p>
-              </div>
-              <div className="details-container">
-                <img
-                  className="icon"
-                  src={educationIcon}
-                  alt="Education Icon"
-                />
-                <h3>Education</h3>
-                <p>
-                  3rd year bachelor degree student <br /> at Joongbu University
-                </p>
-              </div>
+        <div className="about-details-container">
+          <div className="about-containers">
+            <div className="details-container">
+              <img
+                className="icon"
+                src={experienseIcon}
+                alt="Experience Icon"
+              />
+              <h3>{t('experience')}</h3>
+              <p>{t('experienceText')}</p>
             </div>
-            <div className="text-container">
-              <p>
-                Full-stack Developer – Passionate and Fast Learner I completed a
-                6-month bootcamp, where I learned HTML, CSS, JavaScript,
-                React.js, TypeScript, Node.js, and Express.js. I enjoy learning
-                new technologies and applying them to real projects. During this
-                time, I successfully developed two real-world projects, which
-                provided me with hands-on experience and solid skills.
-              </p>
+            <div className="details-container">
+              <img
+                className="icon"
+                src={educationIcon}
+                alt="Education Icon"
+              />
+              <h3>{t('education')}</h3>
+              <p>{t('educationText')}</p>
             </div>
           </div>
+          <div className="text-container">
+            <p>{t('fullStackDeveloperDescription')}</p>
+          </div>
         </div>
-        <img
-          className="icon arrow"
-          onClick={() => (location.href = "./#experience")}
-          src={next}
-          alt="Next Icon"
-        />
-      </AboutContainer>
+      </div>
+      <img
+        className="icon arrow"
+        onClick={() => (location.href = "./#experience")}
+        src={next}
+        alt="Next Icon"
+      />
+    </AboutContainer>
 
       <ExperienceContainer id="experience">
         <div className="about-title">
-          <p className="section-text-p1">Explore My</p>
-          <h1 className="title">Experience</h1>
+        <p className="section-text-p1">{t('exploreMy')}</p>
+        <h1 className="title">{t('experience')}</h1>
         </div>
         <div className="experience-details-container">
           <div className="experience-containers">
             <div className="details-containers">
-              <h2 className="experience-sub-title">Frontend Development</h2>
+            <h2 className="experience-sub-title">{t('frontendDevelopment')}</h2>
               <div className="article-container">
                 <article>
                   <img className="icon" src={checkmark} alt="Experience Icon" />
@@ -254,7 +256,7 @@ const App = () => {
               </div>
             </div>
             <div className="details-containers">
-              <h2 className="experience-sub-title">Backend Development</h2>
+            <h2 className="experience-sub-title">{t('backendDevelopment')}</h2>
               <div className="article-container">
                 <article>
                   <img className="icon" src={checkmark} alt="Experience Icon" />
@@ -312,8 +314,8 @@ const App = () => {
 
       <ProjectsContainer id="projects">
         <div className="about-title">
-          <p className="section-text-p1">Browse My Recent</p>
-          <h1 className="title">Projects</h1>
+          <p className="section-text-p1">{t('browseMyRecent')}</p>
+          <h1 className="title">{t('projects')}</h1>
         </div>
 
         <div className="experience-details-container">
@@ -326,13 +328,9 @@ const App = () => {
                   alt="Project 1 img"
                 />
               </div>
-              <h2 className="experience-sub-title project-title">Camper Car</h2>
+              <h2 className="experience-sub-title project-title"> {t('camperCarTitle')}</h2>
               <p style={{ paddingBottom: "1rem" }}>
-                This is my first project. I used React.js for the frontend, MUI
-                for components and icons, Styled-components for styling, React
-                Router for navigation, React Modal for pop-ups, and React Slick
-                with Responsive Carousel for carousels. EmailJS was added for
-                sending emails. The project is fully responsive.
+              {t('camperCarDescription')}
               </p>
               <div className="btn-container">
                 <button
@@ -343,7 +341,7 @@ const App = () => {
                     )
                   }
                 >
-                  Github
+                  {t('gitHub')}
                 </button>
                 <button
                   className="btn btn-color-2 project-btn"
@@ -354,7 +352,7 @@ const App = () => {
                     )
                   }
                 >
-                  Live Demo
+                 {t('liveDemo')}
                 </button>
               </div>
             </div>
@@ -367,15 +365,10 @@ const App = () => {
                   alt="Project 2 img"
                 />
               </div>
-              <h2 className="experience-sub-title project-title">Zoo Market</h2>
+              <h2 className="experience-sub-title project-title">{t('zooMarketTitle')}</h2>
+              <h5 style={{color: "red"}}>{t('zooMarketWarning')}</h5>
               <p style={{ paddingBottom: "1rem" }}>
-                Zoo Market is a full-stack web application for selling people's
-                pets and pet-related products. The frontend is built with
-                TypeScript , Styled-components , MUI , React Router , React
-                Modal , and React Slick , and it connects to the backend using
-                Axios . The backend is powered by Node.js , Express.js , and
-                MongoDB , with Nodemailer integrated for automated email
-                sending.
+              {t('zooMarketDescription')}
               </p>
               <div className="btn-container">
                 <button
@@ -386,17 +379,15 @@ const App = () => {
                     )
                   }
                 >
-                  Github
+                     {t('gitHub')}
                 </button>
                 <button
                   className="btn btn-color-2 project-btn"
                   onClick={() =>
-                    window.open(
-                      "https://pet-project-frontend-lovat.vercel.app"
-                    )
+                    window.open("https://pet-project-frontend-lovat.vercel.app")
                   }
                 >
-                  Live Demo
+                 {t('liveDemo')}
                 </button>
               </div>
             </div>
@@ -410,23 +401,17 @@ const App = () => {
                 />
               </div>
               <h3 className="">
-                Zoo Market <br />
-                (Admin-Dashboard) <br />
+             {t('adminDashboardTitle')}
               </h3>
-              <h3>email:</h3>
+              <h5 style={{color: "red"}}>{t('adminDashboardWarning')}</h5>
+              <h3>{t('email')}</h3>
               <p>ahrorjonsadullayev2@gmail.com</p>
 
-              <h3>password: </h3>
+              <h3>{t('password')} </h3>
               <p>111111</p>
 
               <p style={{ paddingBottom: "1rem" }}>
-                Admin Dashboard – for managing the Zoo Market platform. Built
-                with TypeScript , Styled-components , MUI Material , and MUI Joy
-                . Chart.js and react-chartjs-2 show information about products
-                and users. Axios handles data requests, react-router-dom manages
-                navigation, and react-toastify shows notifications. JWT
-                authentication and jspdf help with security and creating
-                reports.
+                {t('adminDashboardDescription')}
               </p>
               <div className="btn-container">
                 <button
@@ -437,17 +422,54 @@ const App = () => {
                     )
                   }
                 >
-                  Github
+                   {t('gitHub')}
                 </button>
                 <button
                   className="btn btn-color-2 project-btn"
                   onClick={() =>
                     window.open(
-                      "https://pet-project-admin-g7ms-gosbij8vj-akhrorjons-projects.vercel.app"
+                      "https://pet-project-admin.vercel.app/chart"
                     )
                   }
                 >
-                  Live Demo
+                  {t('liveDemo')}
+                </button>
+              </div>
+            </div>
+            <div className="details-containers color-container">
+              <div className="article-container">
+                <img
+                  className="project-img"
+                  src={project4}
+                  alt="Project 1 img"
+                />
+              </div>
+              <h2 className="experience-sub-title project-title">
+                {t('koreaAutoAppTitle')}
+              </h2>
+              <p style={{ paddingBottom: "1rem" }}>
+                {t('koreaAutoAppDescription')}
+              </p>
+              <div className="btn-container">
+                <button
+                  className="btn btn-color-2 project-btn"
+                  onClick={() =>
+                    window.open(
+                      "https://play.google.com/store/apps/details?id=com.urckoreaauto.app"
+                    )
+                  }
+                >
+                  {t('playMarket')}
+                </button>
+                <button
+                  className="btn btn-color-2 project-btn"
+                  onClick={() =>
+                    window.open(
+                      "https://apps.apple.com/kr/app/korea-auto/id6738042552?l=en-GB"
+                    )
+                  }
+                >
+                  {t('appStore')}
                 </button>
               </div>
             </div>
@@ -464,8 +486,8 @@ const App = () => {
 
       <ContactContainer id="contact">
         <div className="about-title">
-          <p className="section-text-p1">Get In Touch</p>
-          <h1 className="title">Contact Me</h1>
+          <p className="section-text-p1">{t('getInTouch')}</p>
+          <h1 className="title">{t('contactMe')}</h1>
         </div>
         <div className="contact-info-upper-container">
           <div className="contact-info-container">
@@ -488,22 +510,23 @@ const App = () => {
           <div className="nav-links-container">
             <ul className="links">
               <li>
-                <a href="#about">About</a>
+                <a href="#about">{t('about')}</a>
               </li>
               <li>
-                <a href="#experience">Experience</a>
+                <a href="#experience">{t('experience')}</a>
               </li>
               <li>
-                <a href="#projects">Projects</a>
+                <a href="#projects">{t('projects')}</a>
               </li>
               <li>
-                <a href="#contact">Contact</a>
+                <a href="#contact">{t('contact')}</a>
               </li>
             </ul>
           </div>
         </nav>
-        <p>Made in © 2025 Akhrorjon Sadullaev</p>
+        <p>Made in © 2025 {t('name')}</p>
       </FooterContainer>
+      </div>
     </AppContainer>
   );
 };
