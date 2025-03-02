@@ -33,11 +33,12 @@
   "adminDashboardDescription": "The Admin Dashboard is used to manage the Zoo Market platform. It is built with TypeScript, Styled-components, MUI Material, and MUI Joy. Chart.js and react-chartjs-2 display information about products and users. Axios handles data requests, react-router-dom manages navigation, and react-toastify shows notifications. JWT authentication and jspdf help with security and creating reports.",
 
   "koreaAutoAppTitle": "Korea Auto app",
+  "teamProject": "(Team Project)",
   "koreaAutoAppDescription": "The Korea Auto app is a specialized tool designed to simplify the process of buying and selling cars in South Korea. It stands out for its convenience, useful features, and multilingual support. With Korea Auto, users can easily, quickly, and conveniently list their cars for free—no fees required for posting! The app’s efficient interface, simple navigation, and availability in six languages make it accessible and effective for users from around the world. Additionally, it serves as a reliable partner in South Korea’s car market, offering users the best opportunities.",
   "playMarket": "Play Market",
   "appStore": "App Store",
 
-    "getInTouch": "Get In Touch",
-    "contactMe": "Contact Me"
+  "getInTouch": "Get In Touch",
+  "contactMe": "Contact Me"
   
 }

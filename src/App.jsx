@@ -455,6 +455,7 @@ const App = () => {
               <h2 className="experience-sub-title project-title">
                 {t('koreaAutoAppTitle')}
               </h2>
+              <h3 style={{color: "red"}}>{t('teamProject')}</h3>
               <p style={{ paddingBottom: "1rem" }}>
                 {t('koreaAutoAppDescription')}
               </p>
