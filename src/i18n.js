@@ -14,7 +14,7 @@ i18n
       escapeValue: false, // Xavfsiz interpolatsiya
     },
     backend: {
-      loadPath: 'src/locales/{{lng}}/translation.json', // JSON tarjima fayllari joylashuvi
+      loadPath: '/locales/{{lng}}/translation.json', // ✅ To‘g‘ri yo‘l
     },
   });
 
